@@ -8,6 +8,7 @@ public class AppDriver {
 
 	public static void main(String[] args) throws IOException {
 		new GameManager();
+		System.out.print("test");
 
 	}
 
