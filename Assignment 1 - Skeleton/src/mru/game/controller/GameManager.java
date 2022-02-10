@@ -41,8 +41,14 @@ public class GameManager {
 	}
 
 	private void playGame() {
-		
-		// TODO Auto-generated method stub
+		String name = appMen.promptName();
+		Player p = searchByName(name);
+		int initialBalance = 100;
+		int initialWins = 0;
+		if (p == null) {
+			
+			players.add(new Player (name, initialBalance, initialWins));
+		}
 		
 	}
 
@@ -51,18 +57,19 @@ public class GameManager {
 		
 		switch (option) {
 		case 't':
-			FindTopPlayer();
+			Player top = FindTopPlayer();
+			appMen.showPlayer(top);
 			break;
 		case 'n':
-			Player ply = searchByName();
+			String name = appMen.promptName();			
+			Player ply = searchByName(name);
 			appMen.showPlayer(ply);
 		case 'e':
 			break;
 		}
 	}
 
-	private Player searchByName() {
-		String name = appMen.promptName();
+	private Player searchByName(String name) {
 		Player ply = null;
 		
 		for (Player p: players) {
@@ -89,7 +96,6 @@ public class GameManager {
 	        }
 	        return topPlayer;
 	    }
-
 
 	private void Save() throws IOException {
 		File CasinoInfo = new File(FILE_PATH);

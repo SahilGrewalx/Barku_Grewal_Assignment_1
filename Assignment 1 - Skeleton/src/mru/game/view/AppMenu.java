@@ -25,7 +25,7 @@ public class AppMenu {
 	public char displaySubMenu() {
 			System.out.println("Select one of these options: ");
 			System.out.println("\t(t) Top Player");
-			System.out.println("\t(n) Search");
+			System.out.println("\t(n) Search by Name");
 			System.out.println("\t(b) Exit to main menu");
 			System.out.print("Enter your choice: ");
 			char option = input.next().toLowerCase().charAt(0);
