@@ -91,7 +91,7 @@ public class GameManager {
 				topPlayer = p;
 			} else if(topPlayer.getNumberOfWins()<p.getNumberOfWins()) {
 				topPlayer = p;
-				System.out.print("T");
+				
 			}
 		}
 		return topPlayer;
@@ -119,7 +119,7 @@ public class GameManager {
 				
 				currentLine = fileReader.nextLine();
 				splittedLine = currentLine.split(",");
-				Player p = new Player(splittedLine[0], Integer.parseInt(splittedLine[1]), Integer.parseInt(splittedLine[2]));
+				Player p = new Player(splittedLine[0], Double.parseDouble(splittedLine[1]), Integer.parseInt(splittedLine[2]));
 				players.add(p);
 			}
 			fileReader.close();
