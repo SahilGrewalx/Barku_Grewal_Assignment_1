@@ -1,3 +1,5 @@
+package mru.game.controller;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -75,10 +77,19 @@ public class GameManager {
 		
 	}
 
-	private void FindTopPlayer() {
-		// TODO Auto-generated method stub
-		
-	}
+	private Player FindTopPlayer() {
+	        Player topPlayer = null;
+	        for (Player p: players) {
+	            if (topPlayer == null) {
+	                topPlayer = p;
+	            } else if(topPlayer.getNumberOfWins()<p.getNumberOfWins()) {
+	                topPlayer = p;
+	                System.out.print("T");
+	            }
+	        }
+	        return topPlayer;
+	    }
+
 
 	private void Save() throws IOException {
 		File CasinoInfo = new File(FILE_PATH);

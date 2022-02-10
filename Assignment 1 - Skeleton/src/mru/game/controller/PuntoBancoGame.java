@@ -1,5 +1,7 @@
 package mru.game.controller;
 
+import mru.game.model.Card;
+import mru.game.model.CardDeck;
 
 public class PuntoBancoGame {
 	CardDeck myDeck = new CardDeck();
@@ -14,7 +16,7 @@ public class PuntoBancoGame {
 	}
 	public Card playercard(Card currentCard, Card drawCard) {
 		String player;
-		player.currentCard();
+		//player.currentCard();
 		return currentCard;
 		
 
@@ -25,4 +27,5 @@ public class PuntoBancoGame {
 	 * See the instructions for the game rules
 	 */
 
+}
 }
