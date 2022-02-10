@@ -1,3 +1,5 @@
+package mru.game.controller;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -39,8 +41,14 @@ public class GameManager {
 	}
 
 	private void playGame() {
-		
-		// TODO Auto-generated method stub
+		String name = appMen.promptName();
+		Player p = searchByName(name);
+		int initialBalance = 100;
+		int initialWins = 0;
+		if (p == null) {
+			//magic numbers
+			players.add(new Player (name, initialBalance, initialWins));
+		}
 		
 	}
 
@@ -49,18 +57,19 @@ public class GameManager {
 		
 		switch (option) {
 		case 't':
-			FindTopPlayer();
+			Player top = FindTopPlayer();
+			appMen.showPlayer(top);
 			break;
 		case 'n':
-			Player ply = searchByName();
+			String name = appMen.promptName();			
+			Player ply = searchByName(name);
 			appMen.showPlayer(ply);
 		case 'e':
 			break;
 		}
 	}
 
-	private Player searchByName() {
-		String name = appMen.promptName();
+	private Player searchByName(String name) {
 		Player ply = null;
 		
 		for (Player p: players) {
@@ -75,9 +84,16 @@ public class GameManager {
 		
 	}
 
-	private void FindTopPlayer() {
-		// TODO Auto-generated method stub
-		
+	private  Player FindTopPlayer() {
+		Player topPlayer = null;
+		for (Player p: players) {
+			if (topPlayer == null) {
+				topPlayer = p;
+			} else if(topPlayer.getNumberOfWins()<p.getNumberOfWins()) {
+				topPlayer = p;
+			}
+		}
+		return topPlayer;
 	}
 
 	private void Save() throws IOException {
