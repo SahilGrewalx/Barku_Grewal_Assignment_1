@@ -2,10 +2,10 @@ package mru.game.model;
 
 public class Player {
 	String name;
-	int balance;
+	double balance;
 	int numberOfWins;
 	
-	public Player(String n, int b, int numberOfWins) {
+	public Player(String n, double b, int numberOfWins) {
 		this.name = n;
 		this.balance = b;
 		this.numberOfWins = numberOfWins;
@@ -17,10 +17,10 @@ public class Player {
 	public String getName() {
 		return name;
 	}
-	public void setbalance(int balance) {
+	public void setbalance(double balance) {
 		this.balance = balance;
 	}
-	public int getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 	public void setNummberOfWins(int numberOfWins) {
@@ -34,7 +34,7 @@ public class Player {
 	 */
 	}
 	public String toString() {
-		return "Name: " + name + "balance: " + balance + "Number of Wins: " + numberOfWins;
+		return "Name: " + name + " balance: " + balance + " Number of Wins: " + numberOfWins;
 	}
 	
 	public String format() {

@@ -1,12 +1,11 @@
 package mru.game.controller;
-
 import mru.game.model.Card;
 import mru.game.model.CardDeck;
-
+import mru.game.view.GameMenu;
 
 
 public class PuntoBancoGame {
-	 CardDeck myDeck; 
+	CardDeck myDeck; 
 	GameMenu gm;
 	 public PuntoBancoGame() {
 		 myDeck = new CardDeck();
@@ -15,26 +14,37 @@ public class PuntoBancoGame {
 	 }
 
 	private void launchGame() {
+		char gmChoice= gm.showGameMenu();
+		double bet= gm.betAmount();
+		Card playerC1 = currentCard();
+	    System.out.print(playerC1);
+	    Card bankerC1 = currentCard();
+	    System.out.print(bankerC1);
+	    Card playerC2 = currentCard();
+	    System.out.print(playerC2);
+	    Card bankerC2 = currentCard();
+		
 		
 		
 	}
-
-	public Card playercard(Card currentCard, Card drawCard) {
-		String player;
-		//player.currentCard();
-		return currentCard;
-		
-
-
-	/**
-	 * In this class you implement the game
-	 * You should use CardDeck class here
-	 * See the instructions for the game rules
-	 */
-
-
-}
-
+     public Card currentCard() {
+    	CardDeck gameDeck = new CardDeck();
+    	Card currentCard= gameDeck.getDeck().remove(0);
+    	return currentCard; 
+     }
+	
+     public Card Hands() {
+    Card playerC1 = currentCard();
+    System.out.print(playerC1);
+    Card bankerC1 = currentCard();
+    
+    	 
+    	 return null;
+    	 
+     }
+     
+     
+     
 }
 
 

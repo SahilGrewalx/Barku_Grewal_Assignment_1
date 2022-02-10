@@ -14,9 +14,9 @@ public class AppMenu {
 
 	public char displayMainMenu() {
 		System.out.println("Select one of these options: ");
-		System.out.println("\t(p) Play game");
-		System.out.println("\t(s) Search");
-		System.out.println("\t(e) Exit");
+		System.out.println("\t(P) Play Game");
+		System.out.println("\t(S) Search");
+		System.out.println("\t(E) Exit");
 		System.out.print("Enter your choice: ");
 	char option = input.next().toLowerCase().charAt(0);
 	return option;
@@ -33,7 +33,7 @@ public class AppMenu {
 	}
 	public String promptName() {
 		System.out.println("Enter name here: ");
-		String name = input.nextLine().trim();
+		String name = input.next();
 	return name;
 	}
 	
