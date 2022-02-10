@@ -11,7 +11,7 @@ public GameMenu() {
 }
 
 public void showGameMenu() {
-	
+	System.out.print("t");
 	
 
 	}
