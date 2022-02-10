@@ -91,7 +91,7 @@ public class GameManager {
 				topPlayer = p;
 			} else if(topPlayer.getNumberOfWins()<p.getNumberOfWins()) {
 				topPlayer = p;
-				System.out.print("t");
+				
 			}
 		}
 		return topPlayer;
