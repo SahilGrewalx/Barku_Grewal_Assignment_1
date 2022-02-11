@@ -1,5 +1,10 @@
 package mru.game.model;
-
+/**
+ * 
+ * @author Dorart
+ * @author Sahil
+ *
+ */
 public class Player {
 	String name;
 	double balance;
@@ -22,7 +27,7 @@ public class Player {
 	/**
 	 * sets name
 	 * 
-	 * @param name
+	 * @param name name parameter 
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -31,7 +36,7 @@ public class Player {
 	/**
 	 * gets name
 	 * 
-	 * @return
+	 * @return returns the name 
 	 */
 	public String getName() {
 		return name;
@@ -40,7 +45,7 @@ public class Player {
 	/**
 	 * sets balance
 	 * 
-	 * @param balance
+	 * @param balance balance parameter
 	 */
 	public void setbalance(double balance) {
 		this.balance = balance;
@@ -49,7 +54,7 @@ public class Player {
 	/**
 	 * gets balance
 	 * 
-	 * @return
+	 * @return returns balance value
 	 */
 	public double getBalance() {
 		return balance;
@@ -58,7 +63,7 @@ public class Player {
 	/**
 	 * sets number of wins
 	 * 
-	 * @param numberOfWins
+	 * @param numberOfWins number of wins parameter
 	 */
 	public void setNummberOfWins(int numberOfWins) {
 		this.numberOfWins = numberOfWins;

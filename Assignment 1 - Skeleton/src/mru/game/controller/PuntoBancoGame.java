@@ -7,7 +7,12 @@ import mru.game.model.CardDeck;
 import mru.game.view.AppMenu;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Dorart
+ * @author Sahil
+ *
+ */
 public class PuntoBancoGame {
 
 	/**
