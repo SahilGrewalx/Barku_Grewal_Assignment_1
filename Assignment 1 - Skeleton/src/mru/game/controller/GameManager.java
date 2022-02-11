@@ -9,6 +9,11 @@ import mru.game.view.AppMenu;
 
 import mru.game.model.Player;
 
+/**
+ * 
+ * runs the whole program
+ *
+ */
 public class GameManager {
 
 	private final String FILE_PATH = "res/CasinoInfo.txt";
@@ -17,6 +22,11 @@ public class GameManager {
 	PuntoBancoGame pb;
 	Scanner input = new Scanner(System.in);
 
+	/**
+	 * gets all the menues and makes new ones
+	 * 
+	 * @throws Exception
+	 */
 	public GameManager() throws Exception {
 		players = new ArrayList<>();
 		appMen = new AppMenu();
@@ -26,6 +36,11 @@ public class GameManager {
 		launchApplication();
 	}
 
+	/**
+	 * takes in the main menu and brances choices to different sections
+	 * 
+	 * @throws IOException
+	 */
 	private void launchApplication() throws IOException {
 		boolean flag = true;
 
@@ -45,6 +60,11 @@ public class GameManager {
 		}
 	}
 
+	/**
+	 * plays the main game of punto Banco creates new users
+	 * 
+	 * @throws IOException
+	 */
 	private void playGame() throws IOException {
 		String name = appMen.promptName();
 		Player p = searchByName(name);
@@ -96,6 +116,9 @@ public class GameManager {
 		}
 	}
 
+	/**
+	 * uses the sub menu to branch off to other options
+	 */
 	private void Search() {
 		char option = appMen.displaySubMenu();
 		switch (option) {
@@ -112,6 +135,12 @@ public class GameManager {
 		}
 	}
 
+	/**
+	 * searches name entered by user to match inside the CasinoInfo.txt
+	 * 
+	 * @param name
+	 * @returns name found
+	 */
 	private Player searchByName(String name) {
 		Player ply = null;
 
@@ -125,6 +154,12 @@ public class GameManager {
 
 	}
 
+	/**
+	 * finds the top player through out the whole CasinoInfo.txt aka the person with
+	 * the most wins
+	 * 
+	 * @returns player with most wins
+	 */
 	private Player FindTopPlayer() {
 		Player topPlayer = null;
 		for (Player p : players) {
@@ -137,6 +172,11 @@ public class GameManager {
 		return topPlayer;
 	}
 
+	/**
+	 * saves the player and balance and wins to the CasinoInfo.txt
+	 * 
+	 * @throws IOException
+	 */
 	private void Save() throws IOException {
 		File CasinoInfo = new File(FILE_PATH);
 		PrintWriter pw = new PrintWriter(CasinoInfo);
@@ -149,6 +189,11 @@ public class GameManager {
 		pw.close();
 	}
 
+	/**
+	 * reads the file
+	 * 
+	 * @throws Exception
+	 */
 	private void loadData() throws Exception {
 		File casinoInfo = new File(FILE_PATH);
 		String currentLine;
