@@ -152,7 +152,7 @@ class PuntoBancoTest {
 					}
 				
 
-}
+		}
 		@Test
 		void testrunGame() {
 			PuntoBancoGame pbg = new PuntoBancoGame();
